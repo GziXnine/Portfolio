@@ -1,0 +1,2 @@
+emailjs.init("p3wVWaiD4N8cQo05V"),document.addEventListener("DOMContentLoaded",()=>{let n=document.getElementById("button"),i=document.getElementById("contactForm"),d=document.querySelector(".sent");i&&n&&i.addEventListener("submit",function(e){e.preventDefault();let t=n.innerText;n.innerText="Sending...";emailjs.sendForm("service_ys8nks8","template_e57p2pc",this).then(()=>{n.innerText=t,d&&d.classList.add("active"),i.reset()},e=>{n.innerText=t,alert(JSON.stringify(e))})})});
+//# sourceMappingURL=../../sourcemaps/plugins.js.map
