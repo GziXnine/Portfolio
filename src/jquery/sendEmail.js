@@ -1,39 +1,41 @@
 /** @format */
 
-// !Initialize EmailJS with your user ID
-emailjs.init("p3wVWaiD4N8cQo05V");
+// /** @format */
 
-// !Wait for the DOM to be fully loaded
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("button");
-  const form = document.getElementById("contactForm");
-  const sentMess = document.querySelector(".sent");
+// // !Initialize EmailJS with your user ID
+// emailjs.init("p3wVWaiD4N8cQo05V");
 
-  if (form && btn) {
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-      let btnVal = btn.innerText;
-      btn.innerText = "Sending...";
+// // !Wait for the DOM to be fully loaded
+// document.addEventListener("DOMContentLoaded", () => {
+//   const btn = document.getElementById("button");
+//   const form = document.getElementById("contactForm");
+//   const sentMess = document.querySelector(".sent");
 
-      const serviceID = "service_ys8nks8"; //? Your EmailJS service ID
-      const templateID = "template_e57p2pc"; //? Your EmailJS template ID
+//   if (form && btn) {
+//     form.addEventListener("submit", function (event) {
+//       event.preventDefault();
+//       let btnVal = btn.innerText;
+//       btn.innerText = "Sending...";
 
-      // !Send the form data using EmailJS
-      emailjs.sendForm(serviceID, templateID, this).then(
-        () => {
-          btn.innerText = btnVal;
-          if (sentMess) {
-            sentMess.classList.add("active"); // Show the success message
-          }
+//       const serviceID = "service_ys8nks8"; //? Your EmailJS service ID
+//       const templateID = "template_e57p2pc"; //? Your EmailJS template ID
 
-          // *Clear the form fields
-          form.reset();
-        },
-        (err) => {
-          btn.innerText = btnVal;
-          alert(JSON.stringify(err));
-        }
-      );
-    });
-  }
-});
+//       // !Send the form data using EmailJS
+//       emailjs.sendForm(serviceID, templateID, this).then(
+//         () => {
+//           btn.innerText = btnVal;
+//           if (sentMess) {
+//             sentMess.classList.add("active"); // Show the success message
+//           }
+
+//           // *Clear the form fields
+//           form.reset();
+//         },
+//         (err) => {
+//           btn.innerText = btnVal;
+//           alert(JSON.stringify(err));
+//         }
+//       );
+//     });
+//   }
+// });

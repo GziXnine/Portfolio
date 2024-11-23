@@ -1,0 +1,82 @@
+/** @format */
+
+@use "../utilities/colors" as *;
+@use "../utilities/times" as *;
+
+.aside,
+header {
+  .header {
+    margin-bottom: 60px;
+  }
+
+  .links,
+  .navbar-collapse {
+    font-size: 15px;
+    ul {
+      margin: {
+        bottom: 40px;
+      }
+
+      li {
+        cursor: pointer;
+        transition: $transition2;
+        margin: {
+          bottom: 5px;
+        }
+
+        &.active,
+        &:hover {
+          color: black !important;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    margin: {
+      top: 40px;
+      bottom: 20px;
+    }
+
+    a {
+      color: black;
+      cursor: pointer;
+
+      &:hover {
+        &:after {
+          width: 100%;
+          left: 0;
+          right: auto;
+        }
+      }
+    }
+  }
+
+  .social {
+    ul {
+      li {
+        display: inline-block;
+        margin: {
+          left: 10px;
+          right: 10px;
+        }
+        a {
+          svg {
+            transition: $transition2;
+            font-size: 18px;
+
+            &:hover {
+              color: black;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+header {
+  @media (min-width: 1200px) {
+    display: none;
+  }
+}

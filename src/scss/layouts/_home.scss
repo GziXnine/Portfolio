@@ -1,0 +1,57 @@
+/** @format */
+
+@use "../utilities/colors" as *;
+@use "../utilities/times" as *;
+
+.home {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .avatar {
+    img {
+      width: 145px;
+      border-radius: 50%;
+      transition: $transition3;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      @media (max-width: 1439px) {
+        width: 120px;
+      }
+    }
+  }
+
+  .name {
+    margin: {
+      top: 25px;
+      bottom: 25px;
+    }
+
+    h2 {
+      color: black;
+      text-transform: uppercase;
+      font-size: 50px;
+      font-weight: 700;
+
+      @media (max-width: 1439px) {
+        font-size: 42px;
+      }
+    }
+  }
+
+  .animateText {
+    span {
+      display: block;
+      letter-spacing: 1px;
+      font: {
+        size: 17px;
+        weight: 100;
+      }
+    }
+  }
+}

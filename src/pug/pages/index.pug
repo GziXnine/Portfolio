@@ -1,6 +1,13 @@
 extends ../layouts/layout
 
 block main
-  main
-    h1 Home Page
-    p Welcome to the home page
+  header
+    include ../blocks/header
+  main.portfolios
+    .container
+      .row
+        aside.col-lg-3.col-md-12.col-sm-12
+          include ../blocks/aside
+        section.data.col-lg-9.col-md-12.col-sm-12
+          include ../blocks/home
+
