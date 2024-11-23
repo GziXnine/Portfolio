@@ -1,28 +1,33 @@
-header
-  nav.navbar.navbar-expand-lg.bg-body-tertiary
-    .container
-      a.navbar-brand(href="#home")
-        h1.header-logo Allam
-      button.navbar-toggler.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
-        span.toggler-icon
-        span.toggler-icon
-        span.toggler-icon
-      .collapse.navbar-collapse(id="navbarSupportedContent")
-        ul
-          li.homes.active Home
-          li.about About
-          li.services Services
-          li.portfolio Portfolio
-          li.certificates Certificates
-          li.blog Blog
-          li.contact Contact
-        .copyright 
-          | Copyright © 2024 by 
-          a(href="https://github.com/GziXnine" target="_blank").line-effect GziXnine
-          br
-          | All rights are reserved
-        .social
-          ul
-            li: a(href="https://github.com/GziXnine" target="_blank"): i.fa-brands.fa-github
-            li: a(href="https://t.me/GziXnine" target="_blank"): i.fa-brands.fa-telegram
-            li: a(href="https://www.linkedin.com/in/1ahmed-allam" target="_blank"): i.fa-brands.fa-linkedin
+ul.dmenu.scroll-nav.d-flex
+  li
+    a.scroll-to.active(href="#home")
+      span Home
+      img(src="assets/images/icons/home.png" alt="" loading="lazy")
+  li
+    a.scroll-to(href="#about")
+      span About
+      img(src="assets/images/icons/user.png" alt="" loading="lazy")
+  li
+    a.scroll-to(href="#resume")
+      span Resume
+      img(src="assets/images/icons/cv.png" alt="" loading="lazy")
+  li
+    a.scroll-to(href="#services")
+      span Services
+      img(src="assets/images/icons/support.png" alt="" loading="lazy")
+  li
+    a.scroll-to(href="#portfolio")
+      span Portfolio
+      img(src="assets/images/icons/portfolio.png" alt="" loading="lazy")
+  li
+    a.scroll-to(href="#certificates")
+      span Certificates
+      img(src="assets/images/icons/certificate.png" alt="" loading="lazy")
+  li
+    a.scroll-to(href="#blog")
+      span Contact
+      img(src="assets/images/icons/blog.png" alt="" loading="lazy")
+  li
+    a.scroll-to(href="#contact")
+      span Contact
+      img(src="assets/images/icons/contact.png" alt="" loading="lazy")

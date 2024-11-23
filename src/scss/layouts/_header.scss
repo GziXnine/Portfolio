@@ -2,84 +2,105 @@
 
 @use "../utilities/colors" as *;
 @use "../utilities/times" as *;
-@use "../utilities/mixins" as *;
 
-header {
+.dmenu {
+  flex-direction: column;
+  border: 1px solid $main-color;
+  border-radius: 30px;
   position: fixed;
-  z-index: 10;
-  width: 100% !important;
-  height: 60px;
-  padding: 10px 20px;
-  top: 0;
+  right: 68px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  gap: 10px;
+  padding: 24px 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(3px);
+  z-index: 20;
 
-  nav {
-    .container {
+  @media (max-width: 992px) {
+    right: 50px;
+  }
+
+  @media (max-width: 768px) {
+    top: 90%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    flex-direction: row;
+    gap: 0px;
+    height: 50px;
+    padding: 12px 8px;
+  }
+
+  li {
+    .scroll-to,
+    a {
+      display: block;
       position: relative;
+      width: 45px;
+      transition: 0.3s;
+      color: $main-color;
+      cursor: pointer;
+
+      img {
+        width: 15px;
+        height: 15px;
+      }
+
+      &.active,
+      &:hover {
+        span {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      span {
+        position: absolute;
+        transition: 0.3s;
+        font-size: 12px;
+        background: #404042;
+        right: 100%;
+        color: #fff;
+        display: block;
+        padding: 3px 8px;
+        border-radius: 5px;
+        visibility: hidden;
+        opacity: 0;
+
+        @media (max-width: 768px) {
+          transform: rotate(90deg);
+          right: -3px;
+          top: -50px;
+        }
+
+        &::before {
+          content: "";
+          width: 10px;
+          height: 10px;
+          background: #404042;
+          position: absolute;
+          right: -3px;
+          top: 50%;
+          transform: rotate(54deg) skew(-8deg, -39deg);
+          margin-top: -5px;
+          z-index: -1;
+        }
+      }
+
+      &:hover span {
+        opacity: 1;
+        visibility: visible;
+      }
     }
 
-    .navbar-toggler {
-      padding: 0.25rem 0.75rem;
-      font-size: 1.25rem;
-      line-height: 1;
-      background-color: transparent;
-      border: 1px solid transparent;
-      border-radius: 0.25rem;
-      position: relative;
-
-      .toggler-icon {
-        width: 30px;
-        height: 2px;
-        background-color: black;
-        display: block;
-        margin: 5px 0;
-        position: relative;
-        transition: all 0.3s ease-out 0s;
-
-        @media (max-width: 992px) {
-          background-color: black;
+    &:nth-of-type(6) {
+      span {
+        @media (max-width: 768px) {
+          transform: rotate(90deg);
+          right: -15px;
+          top: -60px;
         }
-
-        @media (max-width: 1199px) {
-          background-color: black;
-        }
-      }
-
-      &:focus {
-        outline: none;
-        box-shadow: none;
-      }
-
-      &:not(.collapsed) {
-        .toggler-icon:nth-of-type(1) {
-          transform: rotate(45deg);
-          top: 7px;
-        }
-        .toggler-icon:nth-of-type(2) {
-          opacity: 0;
-        }
-
-        .toggler-icon:nth-of-type(3) {
-          transform: rotate(135deg);
-          top: -7px;
-        }
-      }
-
-      @media only screen and (min-width: 768px) and (max-width: 991px),
-        (max-width: 767px) {
-        .navbar-collapse {
-          position: absolute;
-          top: 100%;
-          left: 0;
-          width: 100%;
-          background-color: black;
-          z-index: 9;
-          -webkit-box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
-        }
-      }
-
-      &:hover {
-        text-decoration: none;
       }
     }
   }

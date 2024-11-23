@@ -3,8 +3,7 @@
 @use "../utilities/colors" as *;
 @use "../utilities/times" as *;
 
-.aside,
-header {
+.aside {
   .header {
     margin-bottom: 60px;
   }
@@ -26,7 +25,9 @@ header {
 
         &.active,
         &:hover {
-          color: black !important;
+          a {
+            color: black !important;
+          }
         }
       }
     }

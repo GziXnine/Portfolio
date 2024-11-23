@@ -118,6 +118,50 @@ $(() => {
   $(window).resize(function () {
     toggleParticles();
   });
+
+  function toggleContainer() {
+    if ($(window).width() < 1200) {
+      $(".container").removeClass("container").addClass("container-fluid");
+    } else {
+      $(".container-fluid")
+        .removeClass("container-fluid")
+        .addClass("container");
+    }
+  }
+
+  // Run on load
+  toggleContainer();
+
+  // Run on window resize
+  $(window).on("resize", function () {
+    toggleContainer();
+  });
+
+  const sections = [
+    "#home",
+    "#about",
+    "#services",
+    "#portfolio",
+    "#certificates",
+    "#blog",
+    "#contact",
+  ];
+  $(".links ul li").on("click", function () {
+    // Get the href attribute of the clicked item's anchor tag
+    const targetSection = $(this).find("a").attr("href");
+
+    // Hide all sections
+    for (let i = 0; i < sections.length; i++) {
+      $(sections[i]).css("display", "none");
+    }
+
+    // Show the target section
+    $(targetSection).css("display", "block");
+
+    // Update active class for the menu
+    $(".links ul li").removeClass("active");
+    $(this).addClass("active");
+  });
 });
 
 $(".animateText").textition({
