@@ -1,0 +1,85 @@
+/** @format */
+
+@use "../utilities/colors" as *;
+@use "../utilities/times" as *;
+@use "../utilities/mixins" as *;
+
+.service {
+  .list_inner {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 40px;
+
+    .list {
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      padding-top: 10px;
+
+      ul {
+        list-style-type: circle;
+
+        li {
+          margin: {
+            top: 5px;
+            bottom: 5px;
+            left: 20px;
+          }
+
+          &:hover {
+            list-style-type: disc;
+          }
+        }
+      }
+    }
+
+    img {
+      width: 50px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .service-card {
+    &:nth-of-type(2) {
+      @media (min-width: 768px) {
+        border-left: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      @media (min-width: 992px) {
+        border-left: 1px solid rgba(0, 0, 0, 0.1);
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  .service-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin: {
+      bottom: 20px;
+      top: 20px;
+    }
+
+    h3 {
+      color: black;
+    }
+
+    .price {
+      font-size: 15px;
+      margin-left: 20px;
+    }
+  }
+
+  .service-content {
+    ul {
+      li {
+        cursor: pointer;
+        transition: $transition2;
+
+        margin: {
+          top: 10px;
+          bottom: 5px;
+        }
+
+        &:hover {
+          color: black;
+        }
+      }
+    }
+  }
+}
