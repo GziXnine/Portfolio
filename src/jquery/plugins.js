@@ -162,6 +162,41 @@ $(() => {
     $(".links ul li").removeClass("active");
     $(this).addClass("active");
   });
+
+  // ! For A Portfolio Images
+  var portfolioIsotope = $(".portfolioe .projects").isotope({
+    itemSelector: ".data",
+    layoutMode: "fitRows",
+  });
+
+  $(".portfolioe .buttons .button").on("click", function () {
+    $(".portfolioe .buttons .button").removeClass("active");
+    $(this).addClass("active");
+    portfolioIsotope.isotope({ filter: $(this).data("filter") });
+  });
+
+  // ! Make a PopUp for Latest News Photos
+  $(".portfolioe .projects .img").on("click", function () {
+    let $overlay = $("<div></div>", {
+      class: "popup-overlay",
+    });
+
+    let $popup = $("<div></div>", {
+      class: "popUp",
+    });
+
+    let $popupImg = $("<img>", {
+      src: $(this.children).attr("src"),
+    });
+
+    $popup.append($popupImg);
+    $("body").append($overlay).append($popup);
+
+    $overlay.on("click", function () {
+      $popup.remove();
+      $overlay.remove();
+    });
+  });
 });
 
 $(".animateText").textition({
