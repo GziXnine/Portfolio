@@ -4,41 +4,87 @@
 @use "../utilities/times" as *;
 
 .blogs {
+  .bloge {
+    padding: {
+      top: 30px;
+      bottom: 30px;
+    }
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid #eee;
+    }
+  }
+
   .posters {
-    .imgs {
-      //   width: 50%;
+    .img {
+      overflow: hidden;
+      cursor: pointer;
 
       img {
         width: 100%;
-        //     height: 300px;
-        //     transition: all 0.3s;
-        //     filter: grayscale(70%) contrast(80%) brightness(100%);
-        //     cursor: pointer;
+        height: 250px;
+        transition: all 0.3s;
+        filter: grayscale(70%) contrast(80%) brightness(100%);
       }
 
-      //   &:hover {
-      //     img {
-      //       filter: grayscale(0%) contrast(100%) brightness(100%);
-      //     }
-      //   }
+      &:hover {
+        img {
+          filter: grayscale(0%) contrast(100%) brightness(100%);
+          transform: scale(1.1);
+        }
+      }
     }
 
-    .title {
+    .titles {
       h4 {
+        display: inline-block;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 8px;
+        margin-bottom: 18px;
         font: {
           size: 17px;
-          weight: 500;
+          weight: 400;
         }
 
         .user,
         .about {
           cursor: pointer;
+          padding: {
+            left: 3px;
+            right: 3px;
+          }
+        }
+
+        .about {
+          font-size: 15px;
+        }
+
+        .in {
+          position: relative;
+          padding-left: 12px;
+
+          &::before {
+            content: "";
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: rgba(128, 128, 128, 0.5);
+            left: 3px;
+            bottom: 7px;
+          }
         }
       }
     }
-  }
 
-  .data {
-    display: none;
+    p {
+      font: {
+        size: 16px;
+        weight: 600;
+      }
+      color: black;
+      cursor: pointer;
+      text-transform: capitalize;
+    }
   }
 }

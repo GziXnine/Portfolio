@@ -154,6 +154,29 @@ img {
   }
 }
 
+.text_hover_effect {
+  position: relative;
+  display: inline;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.5s;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+  }
+
+  &:hover {
+    background-size: 100% 1px;
+  }
+}
+
 #about,
 #services,
 #portfolio,
