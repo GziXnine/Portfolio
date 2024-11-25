@@ -1,0 +1,27 @@
+/** @format */
+
+@use "../utilities/colors" as *;
+@use "../utilities/times" as *;
+
+.certificate {
+  .certificates {
+    .img {
+      padding: 12px;
+      background-color: #eee;
+      cursor: pointer;
+      margin: {
+        top: 10px;
+        bottom: 10px;
+      }
+
+      img {
+        width: 100%;
+        filter: grayscale(70%) contrast(80%) brightness(100%);
+
+        &:hover {
+          filter: grayscale(0%) contrast(100%) brightness(100%);
+        }
+      }
+    }
+  }
+}

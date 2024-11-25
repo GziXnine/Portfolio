@@ -9,13 +9,15 @@
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       padding-bottom: 20px;
 
-      .button {
+      button {
         display: inline-block;
-        padding: 2px 6px;
+        padding: 6px 10px;
         background-color: #eee;
         margin: 5px;
         border-radius: 5px;
         cursor: pointer;
+        border: none;
+        color: $main-color;
 
         &:hover,
         &.active {
@@ -25,15 +27,35 @@
     }
   }
 
-  .projects {
+  .protfolio-container {
     margin-top: 20px;
-    position: relative;
+    display: block;
 
     .data {
       cursor: pointer;
+
       margin: {
         top: 10px;
         bottom: 10px;
+      }
+
+      .name {
+        text-transform: uppercase;
+        position: absolute;
+        z-index: 1000;
+        font-size: 22px;
+        font-weight: 600;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 20px;
+        margin: 10px;
+        top: 10px;
+        display: none;
+
+        &::after {
+          background-color: white !important;
+          height: 2px;
+        }
       }
 
       .img {
@@ -44,6 +66,7 @@
           display: block;
           width: 100%;
           height: auto;
+          filter: grayscale(90%) contrast(80%) brightness(100%);
         }
 
         &::after {
@@ -86,8 +109,13 @@
           display: block;
         }
 
+        img {
+          filter: grayscale(0%) contrast(100%) brightness(100%);
+        }
+
         .repo,
-        .review {
+        .review,
+        .name {
           display: block;
         }
       }

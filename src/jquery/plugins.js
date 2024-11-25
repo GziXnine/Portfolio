@@ -34,12 +34,12 @@ $(() => {
   // // !Preloader Area
   // $(".preloader").addClass("preloader-deactivate");
 
-  // // !Start A VanillaTilt Plugins
-  // VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
-  //   max: 25,
-  //   speed: 400,
-  //   scale: 1.1,
-  // });
+  // !Start A VanillaTilt Plugins
+  VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+    max: 25,
+    speed: 400,
+    scale: 1.1,
+  });
 
   // // !Global error handler
   // $(window).on("error", () => {
@@ -146,6 +146,7 @@ $(() => {
     "#blog",
     "#contact",
   ];
+
   $(".links ul li").on("click", function () {
     // Get the href attribute of the clicked item's anchor tag
     const targetSection = $(this).find("a").attr("href");
@@ -161,22 +162,40 @@ $(() => {
     // Update active class for the menu
     $(".links ul li").removeClass("active");
     $(this).addClass("active");
+
+    // Trigger the simulated click for the portfolio section when it's shown
+    if (targetSection === "#portfolio") {
+      setTimeout(() => {
+        const allButton = document.querySelector(".buttons button.all");
+        if (allButton) {
+          allButton.classList.add("active");
+          allButton.click();
+        }
+      }, 10);
+    }
   });
 
-  // ! For A Portfolio Images
-  var portfolioIsotope = $(".portfolioe .projects").isotope({
-    itemSelector: ".data",
-    layoutMode: "fitRows",
+  var portfolioIsotope;
+
+  // Initialize Isotope once the images are loaded
+  $(".protfolio-container").imagesLoaded(function () {
+    portfolioIsotope = $(".protfolio-container").isotope({
+      itemSelector: ".data",
+      layoutMode: "fitRows",
+    });
   });
 
-  $(".portfolioe .buttons .button").on("click", function () {
-    $(".portfolioe .buttons .button").removeClass("active");
+  // Button filter functionality
+  $(".portfolioe .buttons button").on("click", function () {
+    $(".portfolioe .buttons button").removeClass("active");
     $(this).addClass("active");
-    portfolioIsotope.isotope({ filter: $(this).data("filter") });
+
+    const filterValue = $(this).data("filter");
+    portfolioIsotope.isotope({ filter: filterValue });
   });
 
   // ! Make a PopUp for Latest News Photos
-  $(".portfolioe .projects .img").on("click", function () {
+  $(".img").on("click", function () {
     let $overlay = $("<div></div>", {
       class: "popup-overlay",
     });
