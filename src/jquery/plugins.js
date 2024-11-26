@@ -216,6 +216,17 @@ $(() => {
       $overlay.remove();
     });
   });
+
+  // Trigger file input when the custom button is clicked
+  $("#customButton").on("click", function () {
+    $("#file").click();
+  });
+
+  // Update the file name when a file is selected
+  $("#file").on("change", function () {
+    const fileName = this.files[0] ? this.files[0].name : "No file chosen";
+    $("#file-chosen").text(fileName);
+  });
 });
 
 $(".animateText").textition({
@@ -225,3 +236,22 @@ $(".animateText").textition({
   autoplay: true,
   interval: 4,
 });
+
+// ! Countdown Timer
+const currDate = new Date();
+let $year = $("span#year");
+let myComingBday = currDate.getFullYear() - 2003;
+let myComingBdayLastChar = myComingBday.toString().slice(-1); // Last character
+let countDownDate = new Date(`Dec 3, ${currDate.getFullYear()} 00:00:01`);
+
+const timer = setInterval(() => {
+  let now = new Date();
+  let dateDiff = countDownDate.getTime() - now.getTime();
+
+  if (dateDiff <= 0) {
+    myComingBday++;
+    countDownDate = new Date(`Dec 3, ${now.getFullYear() + 1} 00:00:01`);
+  }
+
+  $year.text(myComingBday - 1);
+}, 1000);

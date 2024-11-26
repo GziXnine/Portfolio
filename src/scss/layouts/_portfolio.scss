@@ -66,7 +66,6 @@
           display: block;
           width: 100%;
           height: auto;
-          filter: grayscale(90%) contrast(80%) brightness(100%);
         }
 
         &::after {
@@ -98,6 +97,10 @@
         }
         bottom: 10px;
         display: none;
+
+        &:hover {
+          background-color: rgb(236, 227, 227);
+        }
       }
 
       .review {
@@ -107,10 +110,6 @@
       &:hover {
         .img::after {
           display: block;
-        }
-
-        img {
-          filter: grayscale(0%) contrast(100%) brightness(100%);
         }
 
         .repo,

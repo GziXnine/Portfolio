@@ -23,6 +23,7 @@
       right: 40px;
     }
   }
+
   .text {
     width: 100%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -112,6 +113,7 @@
 
         &:hover {
           list-style-type: disc;
+          color: black;
         }
       }
     }

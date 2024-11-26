@@ -1,0 +1,89 @@
+.contacts#contact
+  //-! CONTACT ME SECTION
+  .section-inner
+    .title
+      h3 Get in Touch
+    .my_map
+      .mapouter
+        .gmap_canvas
+          iframe#gmap_canvas(
+            width="100%",
+            height="350",
+            src="https://maps.google.com/maps?q=Mohammed%20Gafar%20street%20elmahalla%20kobra&t=&z=15&ie=UTF8&iwloc=&output=embed",
+            frameborder="0",
+            scrolling="no",
+            marginheight="0",
+            marginwidth="0"
+          )
+    .contact-form
+      form(method="post" id="contactForm" novalidate)
+        .row
+          .col-lg-6.col-md-12.col-sm-12
+            .form-group
+              label(for="name") Name
+              input.form-control(type="text" name="name" id="name" placeholder="Name" required aria-required="true" autocomplete="name")
+
+          .col-lg-6.col-md-12.col-sm-12
+            .form-group
+              label(for="email") Email
+              input.form-control(type="email" name="email" id="email" placeholder="Email" required aria-required="true" autocomplete="email")
+
+          .col-lg-6.col-md-12.col-sm-12
+            .form-group
+              label(for="phone") Phone
+              input.form-control(type="tel" name="phone" id="phone" placeholder="Phone" autocomplete="tel" pattern="\\+?[0-9]+" title="Include country code if applicable.")
+
+          .col-lg-6.col-md-12.col-sm-12
+            .form-group
+              label(for="timeline") What's Your Timeline?
+              input.form-control(type="text" name="timeline" id="timeline" placeholder="What's Your Timeline?" autocomplete="off")
+
+          .col-lg-6.col-md-12.col-sm-12
+            .form-group
+              label(for="website") Company Website
+              input.form-control(type="url" name="website" id="website" placeholder="Company Website" autocomplete="url")
+
+          .col-lg-6.col-md-12.col-sm-12
+            .form-group
+              label(for="service") Choose Service
+              select.form-select(name="service" id="service" required aria-required="true")
+                option(selected disabled value="") Choose Service
+                option(value="frontend") Front-end Development
+                option(value="backend") Back-end Development
+                option(value="seo") SEO Optimization
+
+          .col-lg-6.col-md-12.col-sm-12
+            .input-group
+              span.input-group-text $ 
+              input.form-control(type="number" name="budget" id="budget" placeholder="What's Your Budget" aria-label="Budget (to the nearest dollar)" min="0" step="1" required)
+              span.input-group-text .00
+
+          .col-lg-6.col-md-12.col-sm-12.arabic-upload
+            label(for="formFileMultiple") Upload Files
+            input.form-control(type="file" id="formFileMultiple" name="uploads" multiple accept=".jpg,.png,.pdf,.doc,.docx")
+
+          .col-lg-6.col-md-12.col-sm-12
+            .input-group
+              .custom-file
+                input(type="file" id="file" hidden)
+                button(type="button" id="customButton") Choose File
+                span#file-chosen No file chosen
+
+          .col-12
+            .form-group
+              label(for="message") Message
+              textarea.form-control(name="message" id="message" placeholder="Message" rows="4" required aria-required="true")
+
+          .col-12
+            .input-group
+              label(for="verification") Please Enter Code*
+              span.input-group-text(id="basic-addon1") 13123*
+              input.form-control(type="text" name="verification" id="verification" placeholder="Enter Code*" aria-label="Verification Code" aria-describedby="basic-addon1" required)
+
+          .col-12
+            .sent
+              p Your message has been sent. Thank you!
+          button._button#button(type="submit")
+            a()
+              span.back Send Message
+              span.front Send Message

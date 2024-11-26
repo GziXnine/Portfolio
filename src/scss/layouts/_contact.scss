@@ -1,0 +1,165 @@
+/** @format */
+
+@use "../utilities/colors" as *;
+@use "../utilities/times" as *;
+
+.contacts {
+  .my_map {
+    width: 100%;
+    filter: grayscale(100%);
+    margin-bottom: 50px;
+
+    .mapouter {
+      position: relative;
+      text-align: right;
+      height: 350px;
+      width: 100%;
+
+      .gmap_canvas {
+        overflow: hidden;
+        background: none !important;
+        height: 350px;
+        width: 100%;
+      }
+    }
+  }
+
+  .contact-form {
+    .row {
+      .form-group,
+      .input-group {
+        margin-bottom: 20px;
+
+        input,
+        textarea,
+        select,
+        .input-group-text {
+          font-size: 15px;
+          padding: 10px;
+          border-radius: 0px;
+          border-color: rgba(128, 128, 128, 0.5);
+
+          &:focus {
+            box-shadow: none;
+          }
+        }
+
+        .input-group-text {
+          background-color: rgb(238, 238, 238);
+        }
+
+        textarea {
+          resize: none;
+          height: 200px;
+        }
+
+        select {
+          cursor: pointer;
+
+          option {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .form-control[type="file"]:not(:disabled):not([readonly]),
+      input[type="file"]::file-selector-button {
+        border-radius: 0px;
+        border-color: rgba(128, 128, 128, 0.5);
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+
+      input[type="file"]::file-selector-button {
+        padding: 9px;
+        background-color: rgb(238, 238, 238);
+      }
+    }
+
+    label {
+      display: none;
+    }
+
+    ._button {
+      margin-top: 0px;
+    }
+
+    .arabic-upload {
+      display: none;
+    }
+
+    .custom-file {
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+      button {
+        max-height: 43px;
+        width: 25%;
+        font-size: 15px;
+        padding: 12px 9px;
+        border-radius: 0px;
+        border: 1px solid rgba(128, 128, 128, 0.5);
+        cursor: pointer;
+        border-right: none;
+
+        &:hover {
+          background-color: rgba(128, 128, 128, 0.6);
+        }
+      }
+
+      #file-chosen {
+        width: 75%;
+        font-size: 15px;
+        padding: 7px;
+        max-height: 43px;
+        border-radius: 0px;
+        border: 1px solid rgba(128, 128, 128, 0.5);
+        cursor: pointer;
+        overflow: hidden;
+      }
+    }
+
+    ._button {
+      border: none;
+      background-color: white;
+      width: fit-content;
+      padding: 0 10px;
+
+      a {
+        display: inline-block;
+        color: #000;
+        padding: 12px 30px;
+        position: relative;
+        transition: all 0.3s ease;
+
+        .front {
+          padding: 12px 30px;
+        }
+      }
+    }
+
+    .sent {
+      display: none;
+      p {
+        width: 100%;
+        padding: 10px 12px;
+        font: {
+          size: 15px;
+          weight: 500;
+        }
+        color: white;
+        background-color: #03b103;
+
+        @media (max-width: 767px) {
+          margin: 8px 0;
+        }
+      }
+      &.active {
+        display: block;
+      }
+    }
+  }
+}

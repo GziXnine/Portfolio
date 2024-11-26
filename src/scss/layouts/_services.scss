@@ -17,6 +17,7 @@
         list-style-type: circle;
 
         li {
+          font-size: 15px;
           margin: {
             top: 5px;
             bottom: 5px;
@@ -25,6 +26,7 @@
 
           &:hover {
             list-style-type: disc;
+            color: black;
           }
         }
       }
