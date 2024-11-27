@@ -28,18 +28,6 @@ html {
   width: 0px;
 }
 
-::-webkit-scrollbar-thumb {
-  background: $main-color;
-}
-
-::-webkit-scrollbar-track {
-  background: white;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: $main-alt-color;
-}
-
 .container {
   position: relative;
   @media (min-width: 1440px) {
@@ -178,20 +166,14 @@ img {
   }
 }
 
-#about,
-#services,
-#portfolio,
-#certificates,
-#blog,
-#contact {
-  display: none;
-}
-
 .section-inner {
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 58px 30px 35px;
   position: relative;
-  margin-bottom: 50px;
+
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
 
   @media (max-width: 1440px) {
     padding: 40px 30px 20px;
@@ -257,5 +239,11 @@ img {
     &:hover {
       transform: scale(1.1);
     }
+  }
+}
+
+.contacts {
+  .section-inner {
+    margin-bottom: 40px;
   }
 }

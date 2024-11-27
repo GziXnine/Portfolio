@@ -41,7 +41,7 @@ body {
 
   #particles-js {
     position: absolute;
-    z-index: -1;
+    z-index: -3;
     top: 0;
     left: 0;
     width: 100%;
@@ -55,6 +55,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+    z-index: -2;
 
     aside,
     section.data {
@@ -119,5 +120,124 @@ body {
         }
       }
     }
+  }
+}
+
+#magic-cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 30px;
+  height: 30px;
+  pointer-events: none !important;
+  transition: opacity 0.2s ease-in-out 0.5s;
+
+  #cursor {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-top: -20px;
+    margin-left: -20px;
+    box-sizing: border-box;
+    border: 2px solid $main-color;
+    border-radius: 50%;
+    pointer-events: none !important;
+    opacity: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background-color: $main-color;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &.hovered {
+      opacity: 0 !important;
+      transition: opacity 0.3s;
+    }
+  }
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  overflow: hidden;
+  z-index: 99999;
+
+  svg {
+    position: absolute;
+    top: 0;
+    height: 110vh;
+    width: 100vw;
+    fill: white;
+  }
+
+  .loader-container {
+    .loaded {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: black;
+      text-transform: uppercase;
+      letter-spacing: 8px;
+      z-index: 99;
+
+      span {
+        animation: loader-animation 1s infinite alternate;
+
+        &:nth-child(1) {
+          animation-delay: 0s;
+        }
+
+        &:nth-child(2) {
+          animation-delay: 0.1s;
+        }
+
+        &:nth-child(3) {
+          animation-delay: 0.2s;
+        }
+
+        &:nth-child(4) {
+          animation-delay: 0.3s;
+        }
+
+        &:nth-child(5) {
+          animation-delay: 0.4s;
+        }
+
+        &:nth-child(6) {
+          animation-delay: 0.5s;
+        }
+
+        &:nth-child(7) {
+          animation-delay: 0.6s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes loader-animation {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }

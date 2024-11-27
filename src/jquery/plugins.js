@@ -137,31 +137,9 @@ $(() => {
     toggleContainer();
   });
 
-  const sections = [
-    "#home",
-    "#about",
-    "#services",
-    "#portfolio",
-    "#certificates",
-    "#blog",
-    "#contact",
-  ];
-
   $(".links ul li").on("click", function () {
     // Get the href attribute of the clicked item's anchor tag
     const targetSection = $(this).find("a").attr("href");
-
-    // Hide all sections
-    for (let i = 0; i < sections.length; i++) {
-      $(sections[i]).css("display", "none");
-    }
-
-    // Show the target section
-    $(targetSection).css("display", "block");
-
-    // Update active class for the menu
-    $(".links ul li").removeClass("active");
-    $(this).addClass("active");
 
     // Trigger the simulated click for the portfolio section when it's shown
     if (targetSection === "#portfolio") {
@@ -227,6 +205,70 @@ $(() => {
     const fileName = this.files[0] ? this.files[0].name : "No file chosen";
     $("#file-chosen").text(fileName);
   });
+
+  // $(".cooking").on("scroll", function () {
+  //   const container = $(this); // The scrolling container
+
+  //   $(".block").each(function () {
+  //     const blockTop = $(this).position().top; // Position relative to the container
+  //     const blockHeight = $(this).outerHeight();
+
+  //     // Check if the block is in the visible range of the container
+  //     if (container.scrollTop() > $(this).offset().top) {
+  //       const blockID = $(this).attr("id");
+  //       console.log("Visible Block:", blockID);
+
+  //       // Remove 'active' class from all navigation links
+  //       $(".header a").parent().removeClass("active");
+
+  //       // Add 'active' class to the corresponding navigation link
+  //       $(".header li a[data-scroll='" + blockID + "']")
+  //         .parent()
+  //         .addClass("active");
+  //     }
+  //   });
+  // });
+
+  const $cursor = $("#cursor");
+  const $hoverElements = $("a");
+
+  // Update cursor position on mouse move
+  $(document).on("mousemove", function (e) {
+    if ($cursor.length) {
+      gsap.to($cursor, {
+        x: e.clientX,
+        y: e.clientY,
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    }
+  });
+
+  // Add hover effects for specified elements
+  $hoverElements.on("mouseenter", function () {
+    if ($cursor.length) {
+      $cursor.addClass("hovered");
+      gsap.to($cursor, {
+        scale: 2,
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    }
+  });
+
+  $hoverElements.on("mouseleave", function () {
+    if ($cursor.length) {
+      $cursor.removeClass("hovered");
+      gsap.to($cursor, {
+        scale: 1,
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    }
+  });
 });
 
 $(".animateText").textition({
@@ -255,3 +297,111 @@ const timer = setInterval(() => {
 
   $year.text(myComingBday - 1);
 }, 1000);
+
+(function ($) {
+  "use strict";
+
+  $(window).on("load", function () {
+    const $svg = $("#loader");
+    const startShape = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
+    const endShape = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
+
+    // Timeline for animations
+    const tl = gsap.timeline();
+
+    // Animation for text fading out
+    tl.to(".loader-container .loaded", {
+      delay: 1.2,
+      y: -50,
+      opacity: 0,
+      duration: 0.6,
+    });
+
+    // Animate the SVG morphing from start shape to end shape
+    tl.to($svg[0], {
+      duration: 0.8,
+      attr: { d: startShape },
+      ease: "power1.easeIn",
+    }).to($svg[0], {
+      duration: 0.8,
+      attr: { d: endShape },
+      ease: "power1.easeOut",
+    });
+
+    // Move and hide the preloader
+    tl.to(".preloader", {
+      y: -1000,
+      duration: 1,
+    }).to(".preloader", {
+      zIndex: -1,
+      display: "none",
+    });
+  });
+})(jQuery);
+
+/*----------------------------------------------
+2. Cursor
+----------------------------------------------*/
+// (function ($) {
+//   "use strict";
+
+//   const $cursor = $("#cursor");
+//   const $hoverElements = $("a");
+
+//   // Update cursor position on mouse move
+//   $(document).on("mousemove", function (e) {
+//     if ($cursor.length) {
+//       gsap.to($cursor, {
+//         x: e.clientX,
+//         y: e.clientY,
+//         opacity: 1,
+//         duration: 0.3,
+//         ease: "power2.out",
+//       });
+//     }
+//   });
+
+//   // Add hover effects for specified elements
+//   $hoverElements.on("mouseenter", function () {
+//     if ($cursor.length) {
+//       $cursor.addClass("hovered");
+//       gsap.to($cursor, {
+//         scale: 2,
+//         opacity: 0,
+//         duration: 0.3,
+//         ease: "power2.out",
+//       });
+//     }
+//   });
+
+//   $hoverElements.on("mouseleave", function () {
+//     if ($cursor.length) {
+//       $cursor.removeClass("hovered");
+//       gsap.to($cursor, {
+//         scale: 1,
+//         opacity: 1,
+//         duration: 0.3,
+//         ease: "power2.out",
+//       });
+//     }
+//   });
+// })(jQuery);
+
+/*----------------------------------------------
+3. Smooth Scroll
+----------------------------------------------*/
+(function ($) {
+  "use strict";
+
+  const lenis = new Lenis();
+
+  lenis.on("scroll", function () {
+    ScrollTrigger.update();
+  });
+
+  gsap.ticker.add(function (time) {
+    lenis.raf(time * 1000);
+  });
+
+  gsap.ticker.lagSmoothing(0);
+})(jQuery);
