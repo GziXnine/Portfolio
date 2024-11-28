@@ -23,9 +23,9 @@
           bottom: 5px;
         }
 
-        &.active,
-        &:hover {
-          a {
+        a {
+          &.active,
+          &:hover {
             color: black !important;
           }
         }

@@ -1,38 +1,8 @@
 /** @format */
 
 $(() => {
-  // // ! Animation For All Buttons
-  // $(".default-btn, .default-btn-one, .default-btn-two")
-  //   .on("mouseenter", function (e) {
-  //     var parentOffset = $(this).offset(),
-  //       relX = e.pageX - parentOffset.left,
-  //       relY = e.pageY - parentOffset.top;
-  //     $(this).find("span").css({ top: relY, left: relX });
-  //   })
-  //   .on("mouseout", function (e) {
-  //     var parentOffset = $(this).offset(),
-  //       relX = e.pageX - parentOffset.left,
-  //       relY = e.pageY - parentOffset.top;
-  //     $(this).find("span").css({ top: relY, left: relX });
-  //   });
-
-  // // ! For A Portfolio Images
-  // var portfolioIsotope = $(".protfolio-container").isotope({
-  //   itemSelector: ".data",
-  // });
-  // $(".portfolio .buttons button").on("click", function () {
-  //   $(".portfolio .buttons button").removeClass("active");
-  //   $(this).addClass("active");
-  //   portfolioIsotope.isotope({
-  //     filter: $(this).data("filter"),
-  //   });
-  // });
-
   // // !Start A WOW Plugins
   // new WOW().init();
-
-  // // !Preloader Area
-  // $(".preloader").addClass("preloader-deactivate");
 
   // !Start A VanillaTilt Plugins
   VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
@@ -119,39 +89,23 @@ $(() => {
     toggleParticles();
   });
 
-  function toggleContainer() {
-    if ($(window).width() < 1200) {
-      $(".container").removeClass("container").addClass("container-fluid");
-    } else {
-      $(".container-fluid")
-        .removeClass("container-fluid")
-        .addClass("container");
-    }
-  }
+  // function toggleContainer() {
+  //   if ($(window).width() < 1200) {
+  //     $(".container").removeClass("container").addClass("container-fluid");
+  //   } else {
+  //     $(".container-fluid")
+  //       .removeClass("container-fluid")
+  //       .addClass("container");
+  //   }
+  // }
 
-  // Run on load
-  toggleContainer();
+  // // Run on load
+  // toggleContainer();
 
-  // Run on window resize
-  $(window).on("resize", function () {
-    toggleContainer();
-  });
-
-  $(".links ul li").on("click", function () {
-    // Get the href attribute of the clicked item's anchor tag
-    const targetSection = $(this).find("a").attr("href");
-
-    // Trigger the simulated click for the portfolio section when it's shown
-    if (targetSection === "#portfolio") {
-      setTimeout(() => {
-        const allButton = document.querySelector(".buttons button.all");
-        if (allButton) {
-          allButton.classList.add("active");
-          allButton.click();
-        }
-      }, 10);
-    }
-  });
+  // // Run on window resize
+  // $(window).on("resize", function () {
+  //   toggleContainer();
+  // });
 
   var portfolioIsotope;
 
@@ -206,68 +160,15 @@ $(() => {
     $("#file-chosen").text(fileName);
   });
 
-  // $(".cooking").on("scroll", function () {
-  //   const container = $(this); // The scrolling container
-
-  //   $(".block").each(function () {
-  //     const blockTop = $(this).position().top; // Position relative to the container
-  //     const blockHeight = $(this).outerHeight();
-
-  //     // Check if the block is in the visible range of the container
-  //     if (container.scrollTop() > $(this).offset().top) {
-  //       const blockID = $(this).attr("id");
-  //       console.log("Visible Block:", blockID);
-
-  //       // Remove 'active' class from all navigation links
-  //       $(".header a").parent().removeClass("active");
-
-  //       // Add 'active' class to the corresponding navigation link
-  //       $(".header li a[data-scroll='" + blockID + "']")
-  //         .parent()
-  //         .addClass("active");
-  //     }
-  //   });
-  // });
-
-  const $cursor = $("#cursor");
-  const $hoverElements = $("a");
-
-  // Update cursor position on mouse move
-  $(document).on("mousemove", function (e) {
-    if ($cursor.length) {
-      gsap.to($cursor, {
-        x: e.clientX,
-        y: e.clientY,
-        opacity: 1,
-        duration: 0.3,
-        ease: "power2.out",
-      });
-    }
-  });
-
-  // Add hover effects for specified elements
-  $hoverElements.on("mouseenter", function () {
-    if ($cursor.length) {
-      $cursor.addClass("hovered");
-      gsap.to($cursor, {
-        scale: 2,
-        opacity: 0,
-        duration: 0.3,
-        ease: "power2.out",
-      });
-    }
-  });
-
-  $hoverElements.on("mouseleave", function () {
-    if ($cursor.length) {
-      $cursor.removeClass("hovered");
-      gsap.to($cursor, {
-        scale: 1,
-        opacity: 1,
-        duration: 0.3,
-        ease: "power2.out",
-      });
-    }
+  // Attach click event to all <li> elements inside .links
+  $(".links li a").on("click", function () {
+    // Remove 'active' class from all <li> elements
+    $(this)
+      .addClass("active")
+      .parent()
+      .siblings()
+      .find("a")
+      .removeClass("active");
   });
 });
 
@@ -340,68 +241,20 @@ const timer = setInterval(() => {
 })(jQuery);
 
 /*----------------------------------------------
-2. Cursor
+3. Smooth Scroll
 ----------------------------------------------*/
 // (function ($) {
 //   "use strict";
 
-//   const $cursor = $("#cursor");
-//   const $hoverElements = $("a");
+//   const lenis = new Lenis();
 
-//   // Update cursor position on mouse move
-//   $(document).on("mousemove", function (e) {
-//     if ($cursor.length) {
-//       gsap.to($cursor, {
-//         x: e.clientX,
-//         y: e.clientY,
-//         opacity: 1,
-//         duration: 0.3,
-//         ease: "power2.out",
-//       });
-//     }
+//   lenis.on("scroll", function () {
+//     ScrollTrigger.update();
 //   });
 
-//   // Add hover effects for specified elements
-//   $hoverElements.on("mouseenter", function () {
-//     if ($cursor.length) {
-//       $cursor.addClass("hovered");
-//       gsap.to($cursor, {
-//         scale: 2,
-//         opacity: 0,
-//         duration: 0.3,
-//         ease: "power2.out",
-//       });
-//     }
+//   gsap.ticker.add(function (time) {
+//     lenis.raf(time * 1000);
 //   });
 
-//   $hoverElements.on("mouseleave", function () {
-//     if ($cursor.length) {
-//       $cursor.removeClass("hovered");
-//       gsap.to($cursor, {
-//         scale: 1,
-//         opacity: 1,
-//         duration: 0.3,
-//         ease: "power2.out",
-//       });
-//     }
-//   });
+//   gsap.ticker.lagSmoothing(0);
 // })(jQuery);
-
-/*----------------------------------------------
-3. Smooth Scroll
-----------------------------------------------*/
-(function ($) {
-  "use strict";
-
-  const lenis = new Lenis();
-
-  lenis.on("scroll", function () {
-    ScrollTrigger.update();
-  });
-
-  gsap.ticker.add(function (time) {
-    lenis.raf(time * 1000);
-  });
-
-  gsap.ticker.lagSmoothing(0);
-})(jQuery);

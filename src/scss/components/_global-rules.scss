@@ -40,7 +40,7 @@ html {
   }
 
   @media (max-width: 1199px) {
-    padding: 0px;
+    padding: 15px;
   }
 }
 
@@ -175,8 +175,14 @@ img {
     margin-bottom: 40px;
   }
 
-  @media (max-width: 1440px) {
+  @media (max-width: 1439px) {
     padding: 40px 30px 20px;
+  }
+
+  @media (max-width: 480px) {
+    &:last-child {
+      margin-bottom: 40px;
+    }
   }
 
   .title {

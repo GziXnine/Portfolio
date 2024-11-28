@@ -17,10 +17,21 @@
     padding-top: 40px;
   }
 
+  @media (max-width: 767px) {
+    font-size: 15px;
+  }
+
   .resume {
     padding: {
       left: 40px;
       right: 40px;
+    }
+
+    @media (max-width: 767px) {
+      padding: {
+        left: 20px;
+        right: 20px;
+      }
     }
   }
 
@@ -47,6 +58,20 @@
         span:first-child {
           min-width: 120px;
           display: inline-block;
+
+          @media (max-width: 767px) {
+            min-width: 60px;
+            padding-right: 5px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          width: 100%;
+
+          span:first-child {
+            min-width: 0px;
+            padding-right: 5px;
+          }
         }
       }
     }
@@ -60,7 +85,7 @@
   .additional {
     position: relative;
 
-    &:before {
+    &::before {
       content: "";
       position: absolute;
       top: 0;
@@ -69,12 +94,51 @@
       height: 100%;
       background-color: rgba(0, 0, 0, 0.1);
     }
+
+    @media (max-width: 767px) {
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  .knowledge {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: calc(74% - 0.5px);
+      width: 1px;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.1);
+      display: none;
+    }
+
+    @media only screen and (max-width: 991px) and (min-width: 768px) {
+      &::after {
+        display: block;
+      }
+    }
   }
 
   .knowledge,
   .additional,
   .timeline {
     position: relative;
+
+    @media (max-width: 767px) {
+      padding: {
+        left: 10px;
+        right: 10px;
+      }
+    }
+
+    .lang-section,
+    .soft-section {
+      @media (min-width: 767px) {
+        display: block;
+      }
+    }
 
     .section1 {
       .heading {
@@ -83,6 +147,16 @@
 
       .front,
       .back {
+        @media only screen and (max-width: 1920px) and (min-width: 480px) {
+          display: inline-block;
+          width: 50%;
+        }
+
+        @media (max-width: 480px) {
+          display: block;
+          width: 100%;
+        }
+
         .title-section {
           margin: 10px 0 5px;
         }
@@ -90,6 +164,7 @@
 
       .front {
         position: relative;
+        overflow: hidden;
 
         &::after {
           content: "";
@@ -100,6 +175,12 @@
           width: 1px;
           height: 100%;
           background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 767px) {
+          &::after {
+            display: none;
+          }
         }
       }
     }
@@ -117,13 +198,63 @@
         }
       }
     }
+
     .section2 {
       padding-left: 30px;
+
+      @media (max-width: 767px) {
+        padding-left: 10px;
+      }
+
+      @media (max-width: 767px) {
+        padding: {
+          top: 10px;
+          bottom: 0px;
+        }
+        margin-top: 10px;
+        border-bottom: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+      }
 
       .lang-section {
         padding-bottom: 20px;
         margin-bottom: 20px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+        @media (max-width: 991px) {
+          padding-bottom: 0px;
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  .additional {
+    @media only screen and (max-width: 767px) and (min-width: 576px) {
+      &::before {
+        display: block;
+      }
+    }
+    .add1,
+    .add2 {
+      @media (max-width: 767px) {
+        width: 50%;
+      }
+
+      @media (max-width: 575px) {
+        width: 100%;
+      }
+    }
+
+    .add2 {
+      @media (max-width: 991px) {
+        border: none;
+        padding-top: 0px;
+        padding-left: 20px;
+      }
+
+      @media (max-width: 575px) {
+        padding-left: 10px;
       }
     }
   }
