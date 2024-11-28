@@ -5,9 +5,23 @@
 @use "../utilities/mixins" as *;
 
 .service {
+  .section-inner {
+    @media (max-width: 768px) {
+      padding: 10px;
+    }
+  }
+
   .list_inner {
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 40px;
+
+    @media (max-width: 768px) {
+      padding: 20px;
+
+      &.one {
+        margin-bottom: 20px;
+      }
+    }
 
     .list {
       border-top: 1px solid rgba(0, 0, 0, 0.1);

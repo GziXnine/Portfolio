@@ -4,6 +4,16 @@
 @use "../utilities/times" as *;
 
 .portfolioe {
+  .section-inner {
+    @media (max-width: 1199px) {
+      padding: 10px;
+    }
+  }
+
+  .container {
+    padding: 0 !important;
+  }
+
   .taskbar {
     .buttons {
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -19,6 +29,12 @@
         border: none;
         color: $main-color;
 
+        @media (max-width: 768px) {
+          padding: 4px 8px;
+          margin: 4px;
+          font-size: 15px;
+        }
+
         &:hover,
         &.active {
           color: black;
@@ -33,10 +49,15 @@
 
     .data {
       cursor: pointer;
+      padding: 0px 12px !important;
 
       margin: {
         top: 10px;
         bottom: 10px;
+      }
+
+      @media (max-width: 480px) {
+        padding: 0px !important;
       }
 
       .name {
@@ -51,6 +72,12 @@
         margin: 10px;
         top: 10px;
         display: none;
+
+        @media (max-width: 768px) {
+          font-size: 18px;
+          top: 5px;
+          margin: 5px;
+        }
 
         &::after {
           background-color: white !important;
@@ -98,6 +125,10 @@
         bottom: 10px;
         display: none;
 
+        @media (max-width: 768px) {
+          font-size: 13px;
+        }
+
         &:hover {
           background-color: rgb(236, 227, 227);
         }
@@ -105,6 +136,18 @@
 
       .review {
         margin-left: 70px;
+      }
+
+      @media (max-width: 768px) {
+        .img::after {
+          display: block;
+        }
+
+        .repo,
+        .review,
+        .name {
+          display: block;
+        }
       }
 
       &:hover {

@@ -45,6 +45,11 @@
           weight: 400;
         }
 
+        @media (max-width: 768px) {
+          font-size: 15px;
+          padding-top: 10px;
+        }
+
         .user,
         .about {
           cursor: pointer;
@@ -84,6 +89,10 @@
       color: black;
       cursor: pointer;
       text-transform: capitalize;
+
+      @media (max-width: 768px) {
+        font-size: 15px;
+      }
     }
   }
 }

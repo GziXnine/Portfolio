@@ -4,6 +4,10 @@
 @use "../utilities/times" as *;
 
 .contacts {
+  @media (max-width: 480px) {
+    margin-bottom: 110px;
+  }
+
   .my_map {
     width: 100%;
     filter: grayscale(100%);
@@ -98,8 +102,8 @@
       button {
         max-height: 43px;
         width: 25%;
-        font-size: 15px;
-        padding: 12px 9px;
+        font-size: 13px;
+        padding: 13px 0px;
         border-radius: 0px;
         border: 1px solid rgba(128, 128, 128, 0.5);
         cursor: pointer;

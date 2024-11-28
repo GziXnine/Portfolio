@@ -40,6 +40,11 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding-bottom: 42px;
     margin-bottom: 39px;
+
+    @media (max-width: 767px) {
+      padding-bottom: 22px;
+      margin-bottom: 19px;
+    }
   }
 
   .details {
@@ -298,7 +303,7 @@
       }
 
       .content {
-        background-color: #eeeeee7a;
+        background-color: #efefef;
         padding: 15px;
         border-radius: 2px;
 
@@ -338,19 +343,31 @@
           top: 20px;
           right: -32px;
 
-          @media (max-width: 767px) {
-            top: -32px;
-            right: 44.8%;
+          @media only screen and (min-width: 567px) and (max-width: 767px) {
+            top: -30px;
+            right: 47.9%;
+            transform: translateX(-50%);
+          }
+
+          @media (max-width: 567px) {
+            top: -30px;
+            right: 47%;
+            transform: translateX(-50%);
+          }
+
+          @media (max-width: 420px) {
+            top: -30px;
+            right: 45.5%;
             transform: translateX(-50%);
           }
         }
 
         .content::before {
           width: 0px;
-          @include shape("traingle", "right", #eeeeee7a, 22%);
+          @include shape("traingle", "right", #efefef, 26%);
 
           @media (max-width: 767px) {
-            @include shape("traingle", "top", #eeeeee7a, 50%);
+            @include shape("traingle", "top", #efefef, 50%);
           }
         }
       }
@@ -385,10 +402,10 @@
         }
 
         .content::before {
-          @include shape("traingle", "left", #eeeeee7a, 27%);
+          @include shape("traingle", "left", #efefef, 24%);
 
           @media (max-width: 767px) {
-            @include shape("traingle", "top", #eeeeee7a, 50%);
+            @include shape("traingle", "top", #efefef, 50%);
           }
         }
       }
