@@ -5,7 +5,11 @@
 
 .contacts {
   @media (max-width: 480px) {
-    margin-bottom: 110px;
+    margin-bottom: 150px;
+
+    .section-inner {
+      padding: 25px 15px !important;
+    }
   }
 
   .my_map {

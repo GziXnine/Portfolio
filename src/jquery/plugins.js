@@ -1,9 +1,6 @@
 /** @format */
 
 $(() => {
-  // !Start A WOW Plugins
-  // new WOW().init();
-
   // !Start A VanillaTilt Plugins
   VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
     max: 25,
@@ -80,13 +77,12 @@ $(() => {
   toggleParticles();
 
   // Add a resize event listener to toggle particles dynamically
-  $(window).resize(function () {
+  $(window).on("resize", function () {
     toggleParticles();
   });
 
+  //! Initialize Isotope once the images are loaded
   var portfolioIsotope;
-
-  // Initialize Isotope once the images are loaded
   $(".protfolio-container").imagesLoaded(function () {
     portfolioIsotope = $(".protfolio-container").isotope({
       itemSelector: ".data",
@@ -94,7 +90,7 @@ $(() => {
     });
   });
 
-  // Button filter functionality
+  //! Button filter functionality
   $(".portfolioe .buttons button").on("click", function () {
     $(".portfolioe .buttons button").removeClass("active");
     $(this).addClass("active");
@@ -126,18 +122,18 @@ $(() => {
     });
   });
 
-  // Trigger file input when the custom button is clicked
+  //! Trigger file input when the custom button is clicked
   $("#customButton").on("click", function () {
     $("#file").click();
   });
 
-  // Update the file name when a file is selected
+  //! Update the file name when a file is selected
   $("#file").on("change", function () {
     const fileName = this.files[0] ? this.files[0].name : "No file chosen";
     $("#file-chosen").text(fileName);
   });
 
-  // Attach click event to all <li> elements inside .links
+  //! Attach click event to all <li> elements inside .links
   $(".links li a").on("click", function () {
     // Remove 'active' class from all <li> elements
     $(this)
@@ -152,15 +148,15 @@ $(() => {
   const startShape = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
   const endShape = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
 
-  // Timeline for animations
+  //! Timeline for animations
   const tl = gsap.timeline();
 
-  // Animation for text fading out
+  //! Animation for text fading out
   tl.to(".loader-container .loaded", {
-    delay: 1.2,
+    delay: 2,
     y: -50,
     opacity: 0,
-    duration: 0.6,
+    duration: 0.2,
   });
 
   // Animate the SVG morphing from start shape to end shape

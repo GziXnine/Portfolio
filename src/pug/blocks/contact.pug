@@ -6,17 +6,9 @@
     .my_map
       .mapouter
         .gmap_canvas
-          iframe#gmap_canvas(
-            width="100%",
-            height="350",
-            src="https://maps.google.com/maps?q=Mohammed%20Gafar%20street%20elmahalla%20kobra&t=&z=15&ie=UTF8&iwloc=&output=embed",
-            frameborder="0",
-            scrolling="no",
-            marginheight="0",
-            marginwidth="0"
-          )
+          iframe#gmap_canvas(width="100%" sandbox="allow-scripts allow-same-origin" height="350" src="https://maps.google.com/maps?q=Mohammed%20Gafar%20street%20elmahalla%20kobra&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" referrerpolicy="no-referrer-when-downgrade")
     .contact-form
-      form(method="post" id="contactForm" novalidate)
+      form(method="post" id="contactForm")
         .row
           .col-lg-6.col-md-12.col-sm-12
             .form-group
@@ -31,12 +23,12 @@
           .col-lg-6.col-md-12.col-sm-12
             .form-group
               label(for="phone") Phone
-              input.form-control(type="tel" name="phone" id="phone" placeholder="Phone" autocomplete="tel" pattern="\\+?[0-9]+" title="Include country code if applicable.")
+              input.form-control(type="tel" name="phone" id="phone" placeholder="Phone" autocomplete="tel" required pattern="\\+?[0-9]+" title="Include country code if applicable.")
 
           .col-lg-6.col-md-12.col-sm-12
             .form-group
               label(for="timeline") What's Your Timeline?
-              input.form-control(type="text" name="timeline" id="timeline" placeholder="What's Your Timeline?" autocomplete="off")
+              input.form-control(type="text" name="timeline" id="timeline" placeholder="What's Your Timeline?" required autocomplete="off")
 
           .col-lg-6.col-md-12.col-sm-12
             .form-group
@@ -68,7 +60,7 @@
           .col-12
             .form-group
               label(for="message") Message
-              textarea.form-control(name="message" id="message" placeholder="Message" rows="4" required aria-required="true")
+              textarea.form-control(name="message" id="message" placeholder="Message" rows="4")
 
           .col-12
             .input-group

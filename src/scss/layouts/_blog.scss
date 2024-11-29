@@ -4,6 +4,15 @@
 @use "../utilities/times" as *;
 
 .blogs {
+  .section-inner {
+    padding-top: 30px !important;
+  }
+  @media (max-width: 480px) {
+    .section-inner {
+      padding: 15px !important;
+    }
+  }
+
   .bloge {
     padding: {
       top: 30px;

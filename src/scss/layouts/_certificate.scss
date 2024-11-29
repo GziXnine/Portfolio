@@ -4,6 +4,11 @@
 @use "../utilities/times" as *;
 
 .certificate {
+  @media (max-width: 480px) {
+    .section-inner {
+      padding: 25px 15px !important;
+    }
+  }
   .certificates {
     .img {
       padding: 12px;

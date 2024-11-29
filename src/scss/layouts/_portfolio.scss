@@ -7,11 +7,11 @@
   .section-inner {
     @media (max-width: 1199px) {
       padding: 10px;
-    }
-  }
 
-  .container {
-    padding: 0 !important;
+      .container {
+        padding: 20px 0 0 !important;
+      }
+    }
   }
 
   .taskbar {
