@@ -124,11 +124,11 @@ $(() => {
 
   //! Trigger file input when the custom button is clicked
   $("#customButton").on("click", function () {
-    $("#file").click();
+    $("#attachment").click();
   });
 
   //! Update the file name when a file is selected
-  $("#file").on("change", function () {
+  $("#attachment").on("change", function () {
     const fileName = this.files[0] ? this.files[0].name : "No file chosen";
     $("#file-chosen").text(fileName);
   });

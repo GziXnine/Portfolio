@@ -12,26 +12,6 @@
     }
   }
 
-  .my_map {
-    width: 100%;
-    filter: grayscale(100%);
-    margin-bottom: 50px;
-
-    .mapouter {
-      position: relative;
-      text-align: right;
-      height: 350px;
-      width: 100%;
-
-      .gmap_canvas {
-        overflow: hidden;
-        background: none !important;
-        height: 350px;
-        width: 100%;
-      }
-    }
-  }
-
   .contact-form {
     .row {
       .form-group,
@@ -49,6 +29,7 @@
 
           &:focus {
             box-shadow: none;
+            border-color: black;
           }
         }
 

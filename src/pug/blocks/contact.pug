@@ -3,10 +3,6 @@
   .section-inner
     .title
       h3 Get in Touch
-    .my_map
-      .mapouter
-        .gmap_canvas
-          iframe#gmap_canvas(width="100%" sandbox="allow-scripts allow-same-origin" height="350" src="https://maps.google.com/maps?q=Mohammed%20Gafar%20street%20elmahalla%20kobra&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" referrerpolicy="no-referrer-when-downgrade")
     .contact-form
       form(method="post" id="contactForm")
         .row
@@ -38,7 +34,7 @@
           .col-lg-6.col-md-12.col-sm-12
             .form-group
               label(for="service") Choose Service
-              select.form-select(name="service" id="service" required aria-required="true")
+              select.form-select(name="service" id="service" required aria-required="true" aria-label="Choose a service")
                 option(selected disabled value="") Choose Service
                 option(value="frontend") Front-end Development
                 option(value="backend") Back-end Development
@@ -53,7 +49,7 @@
           .col-lg-6.col-md-12.col-sm-12
             .input-group
               .custom-file
-                input(type="file" id="file" hidden)
+                input(type="file" name="attachment" id="attachment" hidden accept="image/*,application/pdf,.docx,.xlsx")
                 button(type="button" id="customButton") Choose File
                 span#file-chosen No file chosen
 
@@ -72,6 +68,6 @@
             .sent
               p Your message has been sent. Thank you!
           button._button#button(type="submit")
-            a()
+            a(href="#" aria-label="Send Message")
               span.back Send Message
               span.front Send Message

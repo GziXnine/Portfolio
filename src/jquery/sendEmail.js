@@ -1,7 +1,10 @@
 /** @format */
 
 // !Initialize EmailJS with your user ID
-emailjs.init("p3wVWaiD4N8cQo05V");
+
+$(() => {
+  emailjs.init("p3wVWaiD4N8cQo05V");
+});
 
 // !Generate a random 5-digit number
 function generateVerificationCode() {

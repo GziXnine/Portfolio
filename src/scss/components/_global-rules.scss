@@ -169,7 +169,7 @@ img {
 
 .section-inner {
   border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 58px 30px 35px;
+  padding: 40px 30px 35px;
   position: relative;
 
   &:not(:last-child) {
@@ -346,15 +346,4 @@ img {
   100% {
     opacity: 0;
   }
-}
-
-.fade-up {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-up.active {
-  opacity: 1;
-  transform: translateY(0);
 }

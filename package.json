@@ -49,6 +49,7 @@
     "sass-loader": "^16.0.2"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "dotenv": "^16.4.5",
     "gulp-image": "^6.2.1"
   }
