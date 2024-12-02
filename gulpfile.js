@@ -274,7 +274,7 @@ gulp.task("watch", function () {
 gulp.task(
   "default",
   gulp.series(
-    "clean",
+    // "clean",
     gulp.parallel(
       "pug",
       "styles",

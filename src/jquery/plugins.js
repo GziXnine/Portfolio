@@ -144,6 +144,44 @@ $(() => {
       .removeClass("active");
   });
 
+  //! Initialize theme based on local storage
+  function initializeTheme() {
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+      enableDarkTheme();
+      $("#website-control-toggle").prop("checked", true); // Set checkbox state
+    } else {
+      enableLightTheme();
+      $("#website-control-toggle").prop("checked", false); // Set checkbox state
+    }
+  }
+
+  initializeTheme();
+
+  //! Toggle theme on checkbox change
+  $("#website-control-toggle").on("change", function () {
+    if ($(this).is(":checked")) {
+      enableDarkTheme();
+    } else {
+      enableLightTheme();
+    }
+  });
+
+  //! Function to enable dark theme
+  function enableDarkTheme() {
+    $("body").addClass("dark").removeClass("light");
+    localStorage.setItem("theme", "dark");
+    toggleParticles();
+  }
+
+  //! Function to enable light theme
+  function enableLightTheme() {
+    $("body").addClass("light").removeClass("dark");
+    localStorage.setItem("theme", "light");
+    toggleParticles();
+  }
+
   const $svg = $("#loader");
   const startShape = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
   const endShape = "M0 2S175 1 500 1s500 1 500 1V0H0Z";

@@ -1,0 +1,336 @@
+/** @format */
+
+@use "../utilities/colors" as *;
+@use "../utilities/times" as *;
+@use "../utilities/mixins" as *;
+
+body {
+  &.dark {
+    background-color: black;
+
+    @media (max-width: 1199px) {
+      background-color: #14161b;
+    }
+
+    .preloader {
+      svg {
+        fill: black;
+      }
+
+      .loader-container {
+        .loaded {
+          color: white;
+        }
+      }
+    }
+
+    .about {
+      .text {
+        border-color: gray;
+      }
+
+      .section1 {
+        .heading {
+          border-color: gray;
+        }
+      }
+
+      .section2 {
+        @media (max-width: 767px) {
+          border-top-color: gray;
+        }
+
+        .lang-section {
+          border-color: gray;
+        }
+      }
+
+      .front {
+        &::after {
+          background-color: gray !important;
+        }
+      }
+
+      .knowledge,
+      .additional {
+        &::before {
+          background-color: gray;
+        }
+
+        ul {
+          li {
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
+
+      .knowledge {
+        &::after {
+          background-color: gray;
+        }
+      }
+
+      .timeline {
+        &::before {
+          background-color: #3e465b !important;
+        }
+
+        .year,
+        .content {
+          background-color: #202636 !important;
+          color: white !important;
+
+          h4 {
+            color: white !important;
+          }
+        }
+
+        .left {
+          .content::before {
+            width: 0px;
+            @include shape("traingle", "right", #202636, 26%);
+
+            @media (max-width: 767px) {
+              @include shape("traingle", "top", #202636, 50%);
+            }
+          }
+        }
+
+        .right {
+          .content::before {
+            @include shape("traingle", "left", #202636, 24%);
+
+            @media (max-width: 767px) {
+              @include shape("traingle", "top", #202636, 50%);
+            }
+          }
+        }
+      }
+    }
+
+    .service {
+      img {
+        filter: invert(1) brightness(2);
+      }
+
+      .list_inner {
+        border-color: gray;
+
+        .list {
+          border-top-color: gray;
+
+          li {
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
+
+      .service-card {
+        &:nth-of-type(2) {
+          @media (min-width: 768px) {
+            border-color: gray;
+          }
+          @media (min-width: 992px) {
+            border-left-color: gray;
+            border-right-color: gray;
+          }
+        }
+      }
+
+      .service-header {
+        border-bottom-color: gray;
+
+        h3 {
+          color: white;
+        }
+      }
+
+      .service-content {
+        li {
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+
+    .portfolioe {
+      .taskbar {
+        .buttons {
+          border-color: gray;
+
+          button {
+            background-color: #2e333d;
+            color: gray;
+
+            &:hover,
+            &.active {
+              color: white;
+            }
+          }
+        }
+      }
+
+      .protfolio-container {
+        .img {
+          border-color: gray;
+        }
+      }
+    }
+
+    .certificate {
+      .certificates {
+        .img {
+          background-color: #2e333d;
+        }
+      }
+    }
+
+    .contacts {
+      .contact-form {
+        .row {
+          .form-group,
+          .input-group {
+            input,
+            textarea,
+            select,
+            .input-group-text {
+              border-color: gray;
+              background-color: #3e465b;
+              color: white;
+
+              &:focus {
+                border-color: white;
+              }
+
+              &::placeholder {
+                color: white;
+              }
+            }
+
+            .input-group-text {
+              background-color: #3e465b;
+            }
+          }
+        }
+
+        .custom-file {
+          button {
+            background-color: #3e465b;
+            color: white;
+
+            &:hover {
+              background-color: #38425e;
+            }
+          }
+
+          #file-chosen {
+            background-color: #3e465b;
+            color: white;
+            font-weight: 400;
+          }
+        }
+
+        ._button {
+          background-color: #14161b !important;
+
+          a {
+            color: white;
+          }
+        }
+      }
+    }
+
+    ._button {
+      a {
+        color: white;
+
+        .front {
+          color: black;
+        }
+      }
+    }
+
+    .text_hover_effect {
+      color: white;
+    }
+
+    .line-effect {
+      color: white;
+
+      &:after {
+        background-color: white !important;
+      }
+
+      &:hover {
+        color: white;
+      }
+    }
+
+    .section-inner {
+      border-color: gray;
+
+      .title {
+        h3 {
+          background-color: gray;
+          color: white;
+        }
+      }
+
+      .title-section {
+        color: white;
+      }
+    }
+
+    aside,
+    section.data {
+      background-color: #14161b !important;
+
+      h2,
+      .animateText,
+      h1 {
+        color: white;
+      }
+
+      .links,
+      .navbar-collapse {
+        ul {
+          li {
+            a {
+              &.active,
+              &:hover {
+                color: white !important;
+              }
+            }
+          }
+        }
+      }
+
+      .social {
+        ul {
+          li {
+            a {
+              i {
+                &:hover {
+                  color: white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .dmenu {
+      background-color: rgba(12, 9, 9, 0.555);
+
+      img {
+        filter: invert(1) brightness(2);
+      }
+    }
+  }
+}

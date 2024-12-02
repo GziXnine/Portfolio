@@ -11,7 +11,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
 
   a {
     color: $main-color;
@@ -345,5 +345,59 @@ img {
 
   100% {
     opacity: 0;
+  }
+}
+
+.switch {
+  position: absolute;
+  top: 20px;
+  right: -10px;
+
+  @media (max-width: 767px) {
+    right: 0px;
+  }
+
+  .toggle-checkbox {
+    appearance: none;
+    display: none;
+  }
+
+  .toggle-switch {
+    background-color: #ccc;
+    height: 21px;
+    width: 52px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 13px;
+    transition: $transition3;
+
+    &::before {
+      font-family: var(--fa-style-family-classic);
+      content: "\f185";
+      font-weight: 900;
+      background-color: white;
+      width: 15px;
+      height: 15px;
+      font-size: 10px;
+      position: absolute;
+      border-radius: 50%;
+      top: 3px;
+      left: 3px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: goldenrod;
+      transition: 0.3s;
+    }
+  }
+
+  .toggle-checkbox:checked + .toggle-switch {
+    background-color: rgba(0, 0, 255, 0.8);
+
+    &::before {
+      content: "\f186";
+      left: 34px;
+      color: blue;
+    }
   }
 }
