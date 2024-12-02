@@ -28,7 +28,7 @@ dotenv.config();
 
 // !Utility function to get the target environment
 let getTargetEnvironment = () => {
-  const env = process.env.NODE_ENV || "development"; // *Default to development
+  const env = process.env.NODE_ENV || "production"; // *Default to development
   if (!["development", "production"].includes(env)) {
     console.warn(`Invalid environment: ${env}. Defaulting to "development".`);
     return "development";
