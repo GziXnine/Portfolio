@@ -260,10 +260,10 @@ gulp.task("watch", function () {
   livereload.listen();
   gulp.watch("src/pug/**/*.pug", gulp.series("pug"));
   gulp.watch("src/scss/**/*.scss", gulp.series("styles"));
-  // gulp.watch(
-  //   "src/assets/images/**/*.{jpg,jpeg,png,gif,svg}",
-  //   gulp.series("images")
-  // );
+  gulp.watch(
+    "src/assets/images/**/*.{jpg,jpeg,png,gif,svg}",
+    gulp.series("images")
+  );
   gulp.watch(paths.videos.src, gulp.series("videos"));
   gulp.watch(paths.jQuery.src, gulp.series("jQuery"));
   gulp.watch(paths.bootstrapCss.src, gulp.series("bootstrapCSS"));
@@ -274,11 +274,11 @@ gulp.task("watch", function () {
 gulp.task(
   "default",
   gulp.series(
-    // "clean",
+    "clean",
     gulp.parallel(
       "pug",
       "styles",
-      // "images",
+      "images",
       "jQuery",
       "bootstrapCSS",
       "bootstrapJS",

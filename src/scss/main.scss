@@ -60,6 +60,7 @@ body {
 
     aside,
     section.data {
+      scroll-behavior: smooth !important;
       background-color: white;
       border-radius: 2px;
       text-align: center;
