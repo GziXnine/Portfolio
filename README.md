@@ -20,13 +20,6 @@ This portfolio contains a collection of all my web development projects. It is d
   <img src="https://api.netlify.com/api/v1/badges/6f3dc71c-450e-4c67-85fa-0643032058ba/deploy-status" alt="Deploy">
 </p>
 
-## 📊 Development Time
-
-<p align="center">
-  <img src="https://wakatime.com/badge/user/5a4657fe-4994-4a36-a877-a6882bc4ec6c/project/72fc83af-9391-40c5-addc-0265cbe2ef68.svg" alt="wakatime" />
-    
-</p>
-
 ![Portfolio Screenshot](https://github.com/GziXnine/Portfolio/blob/main/readme-img.png)
 
 ## Technologies Used 🛠️

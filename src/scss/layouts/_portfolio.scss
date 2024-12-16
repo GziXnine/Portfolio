@@ -5,6 +5,14 @@
 
 .portfolioe {
   .section-inner {
+    @media (max-width: 1440px) {
+      padding: 30px;
+
+      .container {
+        padding: 20px 0 0 !important;
+      }
+    }
+
     @media (max-width: 1199px) {
       padding: 10px;
 
