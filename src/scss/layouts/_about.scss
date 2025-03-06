@@ -45,6 +45,12 @@
       padding-bottom: 22px;
       margin-bottom: 19px;
     }
+
+    b {
+      font: {
+        weight: 500 !important;
+      }
+    }
   }
 
   .details {
@@ -364,7 +370,7 @@
 
         .content::before {
           width: 0px;
-          @include shape("traingle", "right", #efefef, 26%);
+          @include shape("traingle", "right", #efefef, 33%);
 
           @media (max-width: 767px) {
             @include shape("traingle", "top", #efefef, 50%);
@@ -402,7 +408,7 @@
         }
 
         .content::before {
-          @include shape("traingle", "left", #efefef, 24%);
+          @include shape("traingle", "left", #efefef, 34%);
 
           @media (max-width: 767px) {
             @include shape("traingle", "top", #efefef, 50%);

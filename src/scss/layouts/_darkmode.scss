@@ -90,7 +90,7 @@ body {
         .left {
           .content::before {
             width: 0px;
-            @include shape("traingle", "right", #202636, 26%);
+            @include shape("traingle", "right", #202636, 35%);
 
             @media (max-width: 767px) {
               @include shape("traingle", "top", #202636, 50%);
@@ -100,7 +100,7 @@ body {
 
         .right {
           .content::before {
-            @include shape("traingle", "left", #202636, 24%);
+            @include shape("traingle", "left", #202636, 35%);
 
             @media (max-width: 767px) {
               @include shape("traingle", "top", #202636, 50%);
@@ -259,15 +259,17 @@ body {
       color: white;
     }
 
-    .line-effect {
-      color: white;
-
-      &:after {
-        background-color: white !important;
-      }
-
-      &:hover {
+    .data {
+      .line-effect {
         color: white;
+
+        &:after {
+          background-color: white !important;
+        }
+
+        &:hover {
+          color: white;
+        }
       }
     }
 
@@ -291,46 +293,13 @@ body {
       background-color: #14161b !important;
 
       h2,
-      .animateText,
-      h1 {
+      .animateText {
         color: white;
-      }
-
-      .links,
-      .navbar-collapse {
-        ul {
-          li {
-            a {
-              &.active,
-              &:hover {
-                color: white !important;
-              }
-            }
-          }
-        }
-      }
-
-      .social {
-        ul {
-          li {
-            a {
-              i {
-                &:hover {
-                  color: white;
-                }
-              }
-            }
-          }
-        }
       }
     }
 
-    .dmenu {
-      background-color: rgba(12, 9, 9, 0.555);
-
-      img {
-        filter: invert(1) brightness(2);
-      }
+    .sideba {
+      background-color: #ddffde !important;
     }
   }
 }

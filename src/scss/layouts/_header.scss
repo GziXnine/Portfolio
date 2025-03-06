@@ -14,9 +14,8 @@
   text-align: center;
   gap: 10px;
   padding: 24px 0;
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(3px);
   z-index: -1;
+  background-color: #ddffde !important;
 
   @media (max-width: 992px) {
     right: 50px;
@@ -121,15 +120,6 @@
     }
 
     &:nth-of-type(5) {
-      span {
-        @media (max-width: 768px) {
-          right: 0px;
-          top: -48px;
-        }
-      }
-    }
-
-    &:nth-of-type(6) {
       span {
         @media (max-width: 768px) {
           right: -10px;
